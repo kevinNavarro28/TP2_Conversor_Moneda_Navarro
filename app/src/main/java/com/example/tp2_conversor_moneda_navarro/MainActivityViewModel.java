@@ -26,18 +26,15 @@ public class MainActivityViewModel extends AndroidViewModel {
     }
 
     public void convertir(int dolar,int euro){
+        if(euro==0 && dolar ==0){
+            Toast.makeText(context,"Debe ingresar un valor",Toast.LENGTH_LONG).show();
+            return;
+        }
         if(dolar==0){
-
-        }
-        else {
-            valord.setValue(String.valueOf(dolar*0.92));
-
-        } if(euro == 0) {
-
-
-        }
-        else {
             valore.setValue(String.valueOf(euro*1.09));
+        }
+        else if(euro == 0) {
+            valord.setValue(String.valueOf(dolar * 0.92));
 
         }
     }
